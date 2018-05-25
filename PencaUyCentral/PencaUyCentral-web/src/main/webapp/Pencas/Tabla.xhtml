@@ -25,6 +25,15 @@
 			<p:column headerText="Organización">
 				<h:outputText value="#{penca.organizacion.getNombre()}" />
 			</p:column>			
+			<p:column headerText="Administrador">
+				<h:outputText value="#{penca.ida}" />
+			</p:column>			
+			<p:column headerText="Estilo">
+				<h:outputText value="#{penca.estilo}" />
+			</p:column>			
+			<p:column headerText="Precio">
+				<h:outputText value="#{penca.precio}" />
+			</p:column>			
 		</p:dataTable>
 	</p:panel>
 </h:body>

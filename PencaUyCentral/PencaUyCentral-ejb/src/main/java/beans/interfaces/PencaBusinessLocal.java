@@ -10,7 +10,7 @@ import entidades.Penca;
 
 @Local
 public interface PencaBusinessLocal {
-	public boolean agregarPenca(String nombre, int ido);	
+	public boolean agregarPenca(String nombre, int ido, int ida, int estilo, int precio);	
 	public Penca obtenerPenca(int id);	
 	public int obtenerPencaPorNombre(String nombre);
 	public int obtenerPencaPorNombreYOrganizacion(int id, String nombre);

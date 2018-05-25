@@ -30,8 +30,8 @@ public class PencaBusiness implements PencaBusinessRemote, PencaBusinessLocal {
     }
     
     @Override
-	public boolean agregarPenca(String nombre, int ido) {
-    	return bean.agregarPenca(nombre, ido);
+	public boolean agregarPenca(String nombre, int ido, int ida, int estilo, int precio) {
+    	return bean.agregarPenca(nombre, ido, ida, estilo, precio);
     }
     
     @Override

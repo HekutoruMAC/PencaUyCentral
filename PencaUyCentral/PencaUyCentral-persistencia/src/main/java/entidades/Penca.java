@@ -15,7 +15,8 @@ import java.util.List;
 	@NamedQuery(name="Penca.findAll", query="SELECT p FROM Penca p"),
 	@NamedQuery(name = "Penca.findByNombre", query = "SELECT p FROM Penca p WHERE p.nombre = :nombre"),
 	@NamedQuery(name = "Penca.findByNombreAndOrganizacion", query = "SELECT p FROM Penca p WHERE p.nombre = :nombre AND p.organizacion = :organizacion"),
-	@NamedQuery(name = "Penca.findByOrganizacion", query = "SELECT p FROM Penca p WHERE p.organizacion = :organizacion")
+	@NamedQuery(name = "Penca.findByOrganizacion", query = "SELECT p FROM Penca p WHERE p.organizacion = :organizacion"),
+	//@NamedQuery(name = "Penca.findByOrganizacionAndAdministrador", query = "SELECT p FROM Penca p WHERE p.organizacion = :organizacion AND p.ida = :ida")
 })
 public class Penca implements Serializable {
 	
@@ -28,7 +29,7 @@ public class Penca implements Serializable {
 	
 	@Column(name="\"Nombre\"")
 	private String nombre;
-
+	
 	//bi-directional many-to-one association to Participante
 	@OneToMany(mappedBy="penca")
 	private List<Participante> participantes;
@@ -38,6 +39,15 @@ public class Penca implements Serializable {
 	@JoinColumn(name="\"OrganizacionId\"")
 	private Organizacion organizacion;
 
+	@Column(name="\"AdministradorId\"")
+	private int ida;
+	
+	@Column(name="\"EstiloId\"")
+	private int estilo;
+	
+	@Column(name="\"Precio\"")
+	private int precio;
+	
 	public Penca() {
 	}
 
@@ -48,6 +58,30 @@ public class Penca implements Serializable {
 	/*public void setId(Integer id) {
 		this.id = id;
 	}*/
+	
+	public int getIda() {
+		return this.ida;
+	}
+	
+	public void setIda(int ida) {
+		this.ida = ida;
+	}
+	
+	public int getEstilo() {
+		return this.estilo;
+	}
+	
+	public void setEstilo(int estilo) {
+		this.estilo = estilo;
+	}
+	
+	public int getPrecio() {
+		return this.precio;
+	}
+	
+	public void setPrecio(int precio) {
+		this.precio= precio;
+	}
 	
 	public String getNombre() {
 		return nombre;

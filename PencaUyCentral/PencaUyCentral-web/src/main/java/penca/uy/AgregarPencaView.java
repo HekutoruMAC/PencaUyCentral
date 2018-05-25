@@ -29,6 +29,9 @@ public class AgregarPencaView implements Serializable {
 	private String nombre;
 	private String organizacion;
 	private List<String> organizaciones;
+	private Integer ida;
+	private Integer estilo;
+	private Integer precio;
 
 	@PostConstruct
 	public void init() {
@@ -64,9 +67,33 @@ public class AgregarPencaView implements Serializable {
 		this.organizaciones = organizaciones;
 	}	
 
+	public Integer getIda() {
+		return this.ida;
+	}
+	
+	public void setIda(Integer ida) {
+		this.ida = ida;
+	}
+	
+	public Integer getEstilo() {
+		return this.estilo;
+	}
+	
+	public void setEstilo(Integer estilo) {
+		this.estilo = estilo;
+	}
+	
+	public Integer getPrecio() {
+		return this.precio;
+	}
+	
+	public void setPrecio(Integer precio) {
+		this.precio= precio;
+	}
+	
 	public void save() {
 		int ido = organizacionBean.obtenerOrganizacionPorNombre(organizacion);
-		if (pencaBean.agregarPenca(nombre, ido)){				
+		if (pencaBean.agregarPenca(nombre, ido, ida, estilo, precio)){				
 				FacesContext.getCurrentInstance().addMessage(null,
 						new FacesMessage("Se ha agregado la Penca " + nombre + " al la organizacion " + organizacion));
 			} else {

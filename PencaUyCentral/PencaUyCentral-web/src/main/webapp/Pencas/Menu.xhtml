@@ -9,6 +9,7 @@
 <h:body>
 <p:menubar>
 	<f:facet name="options">
+		<p:commandButton value="Volver" onclick="window.history.back();" icon="ui-icon-arrowreturnthick-1-w"/>`
 		<p:commandButton value="Cerrar Sesión" actionListener="#{LoginBean.cerrarSesion()}" action="/login?faces-redirect=true" icon="ui-icon-power"/>
 	</f:facet>
 </p:menubar>

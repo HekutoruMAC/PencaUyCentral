@@ -31,7 +31,7 @@ public class PencaPersistence implements PencaPersistenceRemote, PencaPersistenc
     }
     
     @Override
-	public boolean agregarPenca(String nombre, int ido) {
+	public boolean agregarPenca(String nombre, int ido, int ida, int estilo, int precio) {
 		Organizacion o = em.find(Organizacion.class, ido);
 		if (o != null) {	
 			int idpe = obtenerPencaPorNombre(nombre);
@@ -39,6 +39,9 @@ public class PencaPersistence implements PencaPersistenceRemote, PencaPersistenc
 				Penca p = new Penca();
 				p.setNombre(nombre);
 				p.setOrganizacion(o);
+				p.setIda(ida);
+				p.setEstilo(estilo);
+				p.setPrecio(precio);
 				em.persist(p);
 				return true;
 			}

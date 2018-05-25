@@ -25,6 +25,17 @@
 				<p:inputText id="nombre" value="#{AgregarPencaView.nombre}"
 					required="true" requiredMessage="Debe tener un nombre." />
 
+				<p:outputLabel for="ida" value="Administrador:" />
+				<p:inputText id="ida" value="#{AgregarPencaView.ida}"
+					required="true" requiredMessage="Debe tener un administrador." />
+
+				<p:outputLabel for="estilo" value="Estilo:" />
+				<p:inputText id="estilo" value="#{AgregarPencaView.estilo}"
+					required="true" requiredMessage="Debe tener un estilo." />
+
+				<p:outputLabel for="precio" value="Precio:" />
+				<p:inputNumber id="precio" value="#{AgregarPencaView.precio}"
+					required="true" requiredMessage="Debe tener un precio." />
 
 				<p:panel header="Seleccione una Organización" style="margin-bottom:10px;">
 					<h:panelGrid columns="1" cellpadding="5">
