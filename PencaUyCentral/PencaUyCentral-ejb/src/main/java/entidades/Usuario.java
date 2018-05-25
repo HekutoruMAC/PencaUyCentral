@@ -49,7 +49,12 @@ public class Usuario  implements Serializable {
 	@Column(name="\"Nacimiento\"")
 	private Date nacimiento;
 	
+	@Column(name="\"Tipo\"")
+	private String tipo;
 	
+	@Column(name="\"Puntos\"")
+	private Integer puntos;
+		
 	public Usuario(){		
 	}
 	
@@ -107,6 +112,22 @@ public class Usuario  implements Serializable {
 
 	public void setNacimiento(Date nacimiento) {
 		this.nacimiento = nacimiento;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
+	public Integer getPuntos() {
+		return puntos;
+	}
+
+	public void setPuntos(Integer puntos) {
+		this.puntos = puntos;
 	}
 	
 }

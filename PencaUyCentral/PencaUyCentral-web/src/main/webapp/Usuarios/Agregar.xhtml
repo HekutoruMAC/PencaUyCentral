@@ -19,6 +19,10 @@
 		<f:facet name="header">
 			<p:messages id="msgs" />
 		</f:facet>
+		<p:outputLabel for="tipo" value="Tipo:" />
+		<p:inputText id="tipo" value="#{AgregarUsuarioView.tipo}"
+			required="true" requiredMessage="Debe tener un tipo." />
+			
 		<p:outputLabel for="nombre" value="Nombre:" />
 		<p:inputText id="nombre" value="#{AgregarUsuarioView.nombre}"
 			required="true" requiredMessage="Debe tener un nombre." />

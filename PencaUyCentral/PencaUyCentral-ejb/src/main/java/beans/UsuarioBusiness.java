@@ -29,8 +29,8 @@ public class UsuarioBusiness implements UsuarioBusinessRemote, UsuarioBusinessLo
     }
     
     @Override
-	public boolean agregarUsuario(String nombre, String apellido, String email, String nickname, String password, Date fechaNac) {
-    	return bean.agregarUsuario(nombre, apellido, email, nickname, password, fechaNac);
+	public boolean agregarUsuario(String nombre, String apellido, String email, String nickname, String password, Date fechaNac, String tipo) {
+    	return bean.agregarUsuario(nombre, apellido, email, nickname, password, fechaNac, tipo);
     }
     
     @Override

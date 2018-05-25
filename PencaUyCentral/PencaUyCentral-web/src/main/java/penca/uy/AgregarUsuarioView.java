@@ -30,6 +30,7 @@ public class AgregarUsuarioView implements Serializable {
 	private String email;
 	private String nickname;
 	private String password;
+	private String tipo;
 
 	public String getNombre() {
 		return nombre;
@@ -78,6 +79,14 @@ public class AgregarUsuarioView implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public String getTipo() {
+		return tipo;
+	}
+	
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 
 	public void save() {
 		Date hoy = new Date();
@@ -85,7 +94,7 @@ public class AgregarUsuarioView implements Serializable {
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage("El nacimiento del Usuario no puede ser posterior a hoy"));
 		} else {
-			if (usuarioBean.agregarUsuario(nombre, apellido, email, nickname, password, nacimiento)) {
+			if (usuarioBean.agregarUsuario(nombre, apellido, email, nickname, password, nacimiento, tipo)) {
 				FacesContext.getCurrentInstance().addMessage(null,
 						new FacesMessage("Se ha agregado el usuario " + nombre + " " + apellido + " con nickname " + nickname));
 			} else {
