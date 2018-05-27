@@ -29,6 +29,9 @@ public class Organizacion implements Serializable {
 	@Column(name="\"Nombre\"")
 	private String nombre;
 
+	@Column(name="\"Estado\"")
+	private String estado;
+
 	//bi-directional many-to-one association to Penca
 	@OneToMany(mappedBy="organizacion")
 	private List<Penca> pencas;
@@ -56,6 +59,14 @@ public class Organizacion implements Serializable {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}	
+	
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 	public List<Penca> getPencas() {

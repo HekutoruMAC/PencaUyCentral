@@ -34,6 +34,7 @@ public class OrganizacionPersistence implements OrganizacionPersistenceRemote, O
 		if (ido == -1) {		
 			Organizacion no = new Organizacion();
 			no.setNombre(nombre);
+			no.setEstado("PENDIENTE");
 			em.persist(no);
 			return true;
 		} else {

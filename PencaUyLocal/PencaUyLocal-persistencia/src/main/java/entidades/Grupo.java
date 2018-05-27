@@ -20,15 +20,12 @@ public class Grupo implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="\"Id\"")
 	private Integer id;
-/*
-	@Column(name="\"FaseId\"")
-	private Integer faseId;
-*/
+
 	@Column(name="\"Nombre\"")
 	private String nombre;
 
 	//bi-directional many-to-one association to Equipos_Grupo
-	@OneToMany(mappedBy="grupo")
+	@OneToMany(mappedBy="grupo", fetch = FetchType.EAGER)
 	private List<EquiposGrupo> equiposGrupo;
 
 	//bi-directional many-to-one association to Fase
@@ -37,14 +34,9 @@ public class Grupo implements Serializable {
 	private Fase fase;
 
 	//bi-directional many-to-one association to Partido
-	@OneToMany(mappedBy="grupo")
+	@OneToMany(mappedBy="grupo", fetch = FetchType.EAGER)
 	private List<Partido> partidos;
 
-/*
-	//bi-directional many-to-one association to Partido
-	@OneToMany(mappedBy="grupo2")
-	private List<Partido> partidos2;
-*/
 	public Grupo() {
 	}
 
@@ -55,14 +47,7 @@ public class Grupo implements Serializable {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-/*
-	public Integer getFaseId() {
-		return this.faseId;
-	}
-	public void setFaseId(Integer faseId) {
-		this.faseId = faseId;
-	}
-*/
+
 	public String getNombre() {
 		return this.nombre;
 	}
@@ -117,22 +102,4 @@ public class Grupo implements Serializable {
 		partido.setGrupo(null);
 	}
 
-/*
-	public List<Partido> getPartidos2() {
-		return this.partidos2;
-	}
-	public void setPartidos2(List<Partido> partidos2) {
-		this.partidos2 = partidos2;
-	}
-	public Partido addPartidos2(Partido partidos2) {
-		getPartidos2().add(partidos2);
-		partidos2.setGrupo2(this);
-		return partidos2;
-	}
-	public Partido removePartidos2(Partido partidos2) {
-		getPartidos2().remove(partidos2);
-		partidos2.setGrupo2(null);
-		return partidos2;
-	}
-*/
 }
